@@ -5,6 +5,7 @@ import { Loader2, Search, TrendingUp, Package } from 'lucide-react';
 import MarketplaceCard from '@/components/MarketplaceCard';
 import PriceChart from '@/components/PriceChart';
 import FeaturedItems from '@/components/FeaturedItems';
+import { useSearchHistory } from '@/hooks/useSearchHistory';
 import { toast } from 'sonner';
 
 interface ItemStats {
@@ -48,6 +49,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [itemData, setItemData] = useState<ItemData | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const { addSearch } = useSearchHistory();
 
   const TOKEN = "334|bytz3FTesCJWwDRHNlMFN9W19oChHLjBY4CaAvWme330754a";
   const HOTEL_ID = 2;
@@ -125,6 +127,9 @@ export default function Home() {
         iconUrl,
         stats: itemStats
       });
+
+      // Registar a busca no histórico
+      addSearch(name);
 
       toast.success('Item encontrado com sucesso!');
     } catch (err) {
