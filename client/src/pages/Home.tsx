@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Loader2, Search, TrendingUp, Package } from 'lucide-react';
 import MarketplaceCard from '@/components/MarketplaceCard';
 import PriceChart from '@/components/PriceChart';
+import FeaturedItems from '@/components/FeaturedItems';
 import { toast } from 'sonner';
 
 interface ItemStats {
@@ -157,6 +158,9 @@ export default function Home() {
             Consulte preços e estatísticas de itens da Feira Livre do Habbo.com.br
           </p>
         </div>
+
+        {/* Featured Items Section */}
+        <FeaturedItems />
 
         {/* Search Section */}
         <div className="mb-12">
