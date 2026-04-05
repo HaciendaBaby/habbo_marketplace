@@ -24,7 +24,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [itemData, setItemData] = useState<any>(null);
   const [priceHistory, setPriceHistory] = useState<any[]>([]);
-  const [searchHistory, setSearchHistory] = useState<any[]>([]);
+
   const [featuredItems, setFeaturedItems] = useState<any[]>([]);
 
   useEffect(() => {
@@ -41,7 +41,6 @@ export default function Home() {
     const history = localStorage.getItem('searchHistory');
     if (history) {
       const parsed = JSON.parse(history);
-      setSearchHistory(parsed);
       updateFeaturedItems(parsed);
     }
   };
@@ -95,7 +94,6 @@ export default function Home() {
       parsed.push(newSearch);
       console.log('Salvando no localStorage:', parsed);
       localStorage.setItem('searchHistory', JSON.stringify(parsed));
-      setSearchHistory(parsed);
       updateFeaturedItems(parsed);
       console.log('Featured items atualizado');
 

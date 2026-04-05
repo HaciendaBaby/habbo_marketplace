@@ -165,3 +165,8 @@
 [2026-04-05T13:41:16.180Z] 9:41:16 AM [vite] vite.config.ts changed, restarting server...
 [2026-04-05T13:41:16.200Z] 9:41:16 AM [vite] server restarted.
 [2026-04-05T13:41:23.614Z] 9:41:23 AM [vite] (client) page reload dist/index.html
+[2026-04-05T13:43:07.725Z] 9:43:07 AM [vite] (client) hmr update /src/pages/Login.tsx
+[2026-04-05T13:43:17.339Z] 9:43:17 AM [vite] (client) ✨ new dependencies optimized: lucide-react
+[2026-04-05T13:43:17.340Z] 9:43:17 AM [vite] (client) ✨ optimized dependencies changed. reloading
+[2026-04-05T13:43:25.015Z] 9:43:25 AM [vite] (client) hmr update /src/pages/Home.tsx
+[2026-04-05T13:43:37.078Z] 9:43:37 AM [vite] (client) hmr update /src/pages/Home.tsx
