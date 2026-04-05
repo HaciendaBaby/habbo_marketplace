@@ -1,21 +1,14 @@
 import { useState } from 'react';
 import { useLocation } from 'wouter';
 import { toast } from 'sonner';
-import { X, Copy, Check } from 'lucide-react';
-
-const glassStyle = {
-  background: 'rgba(20, 20, 60, 0.9)',
-  border: '1px solid rgba(100, 100, 200, 0.3)',
-  backdropFilter: 'blur(10px)'
-};
+import { LogIn, CheckCircle2, Copy } from 'lucide-react';
 
 export default function Login() {
-  const [step, setStep] = useState<'username' | 'verify'>('username');
+  const [step, setStep] = useState<'input' | 'verify'>('input');
   const [username, setUsername] = useState('');
   const [verifyCode, setVerifyCode] = useState('');
   const [generatedCode, setGeneratedCode] = useState('');
   const [loading, setLoading] = useState(false);
-  const [copied, setCopied] = useState(false);
   const [, setLocation] = useLocation();
 
   const generateCode = async (e: React.FormEvent) => {
@@ -40,7 +33,7 @@ export default function Login() {
       const newCode = Math.random().toString(36).substring(2, 10).toUpperCase();
       setGeneratedCode(newCode);
       setStep('verify');
-      toast.success('✅ Código gerado! Coloque-o na missão do Habbo');
+      toast.success('✅ Código gerado!');
     } catch (error) {
       toast.error('Erro ao verificar utilizador');
       console.error(error);
@@ -82,7 +75,7 @@ export default function Login() {
         toast.success(`🎉 Bem-vindo, ${userData.name}!`);
         setLocation('/');
       } else {
-        toast.error('❌ Código não encontrado na missão. Verifique se colocou corretamente!');
+        toast.error('❌ Código não encontrado na missão');
       }
     } catch (error) {
       toast.error('Erro ao verificar código');
@@ -94,161 +87,167 @@ export default function Login() {
 
   const copyCode = () => {
     navigator.clipboard.writeText(generatedCode);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
     toast.success('Código copiado!');
   };
 
   return (
-    <div style={{
+    <div className="min-h-screen w-full flex flex-col" style={{
       background: 'linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)'
     }}>
-      {/* Top Banner with Cards */}
-      <div className="w-full border-b border-gray-700" style={glassStyle}>
-        <div className="max-w-7xl mx-auto px-6 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Left Card - Login */}
-            <div className="relative">
-              <button
-                onClick={() => {
-                  setStep('username');
-                  setUsername('');
-                  setVerifyCode('');
-                  setGeneratedCode('');
-                }}
-                className="absolute -top-2 -right-2 text-gray-400 hover:text-white bg-gray-800 rounded-full p-1"
-              >
-                <X size={20} />
-              </button>
-
-              <h2 className="text-2xl font-bold text-white mb-1">Entrar com Habbo</h2>
-              <p className="text-gray-400 text-sm mb-6">Verifique sua identidade pelo seu perfil do Habbo.</p>
-
-              <form onSubmit={generateCode} className="space-y-4">
-                <div>
-                  <input
-                    type="text"
-                    placeholder="Seu nickname do Habbo"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    disabled={loading}
-                    className="w-full px-4 py-3 bg-transparent border border-gray-600 text-white placeholder:text-gray-500 rounded-lg focus:outline-none focus:border-blue-400"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  disabled={loading || !username.trim()}
-                  className="w-full bg-yellow-500 hover:bg-yellow-600 disabled:opacity-50 disabled:cursor-not-allowed text-black font-bold py-3 rounded-lg transition-all uppercase tracking-wide text-sm"
-                >
-                  {loading ? 'Gerando código...' : 'Gerar Código de Verificação'}
-                </button>
-              </form>
-            </div>
-
-            {/* Right Card - Verification */}
-            {step === 'verify' && (
-              <div className="relative">
-                <button
-                  onClick={() => {
-                    setStep('username');
-                    setUsername('');
-                    setVerifyCode('');
-                    setGeneratedCode('');
-                  }}
-                  className="absolute -top-2 -right-2 text-gray-400 hover:text-white bg-gray-800 rounded-full p-1"
-                >
-                  <X size={20} />
-                </button>
-
-                <h2 className="text-2xl font-bold text-white mb-1">Entrar com Habbo</h2>
-                <p className="text-gray-400 text-sm mb-6">Verifique sua identidade pelo seu perfil do Habbo.</p>
-
-                <div className="space-y-4">
-                  {/* Code Display */}
-                  <div>
-                    <p className="text-xs text-gray-400 uppercase tracking-wide mb-2">Código de Verificação</p>
-                    <div className="flex items-center gap-3 p-4 rounded-lg" style={{
-                      background: 'rgba(100, 100, 200, 0.1)',
-                      border: '1px solid rgba(59, 130, 246, 0.5)'
-                    }}>
-                      <code className="text-2xl font-bold text-yellow-400 flex-1 tracking-widest">
-                        {generatedCode}
-                      </code>
-                      <button
-                        type="button"
-                        onClick={copyCode}
-                        className="text-gray-400 hover:text-white transition-colors"
-                      >
-                        {copied ? <Check size={20} className="text-green-400" /> : <Copy size={20} />}
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Instructions */}
-                  <div className="p-4 rounded-lg" style={{
-                    background: 'rgba(59, 130, 246, 0.1)',
-                    border: '1px solid rgba(59, 130, 246, 0.5)'
-                  }}>
-                    <ol className="text-sm text-gray-300 space-y-1">
-                      <li><strong className="text-yellow-400">1.</strong> Copie o código acima</li>
-                      <li><strong className="text-yellow-400">2.</strong> Vá ao Habbo e coloque na sua <strong className="text-yellow-400">missão</strong></li>
-                      <li><strong className="text-yellow-400">3.</strong> Volte aqui e clique em verificar</li>
-                    </ol>
-                  </div>
-
-                  {/* Verify Form */}
-                  <form onSubmit={verifyCodeInMission} className="space-y-3">
-                    <input
-                      type="text"
-                      placeholder="Cole o código da missão"
-                      value={verifyCode}
-                      onChange={(e) => setVerifyCode(e.target.value.toUpperCase())}
-                      disabled={loading}
-                      className="w-full px-4 py-3 bg-transparent border border-gray-600 text-white placeholder:text-gray-500 rounded-lg focus:outline-none focus:border-blue-400"
-                    />
-
-                    <div className="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        id="remember"
-                        className="w-4 h-4 rounded border-gray-600 bg-transparent cursor-pointer"
-                      />
-                      <label htmlFor="remember" className="text-sm text-gray-300 cursor-pointer">
-                        Continuar conectado
-                      </label>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-3">
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setStep('username');
-                          setUsername('');
-                          setVerifyCode('');
-                          setGeneratedCode('');
-                        }}
-                        className="px-4 py-3 bg-transparent border border-gray-600 text-white rounded-lg hover:bg-gray-900/30 transition-all font-semibold text-sm"
-                      >
-                        Voltar
-                      </button>
-                      <button
-                        type="submit"
-                        disabled={loading || !verifyCode.trim()}
-                        className="px-4 py-3 bg-blue-500 hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed text-white rounded-lg transition-all font-semibold uppercase tracking-wide text-sm"
-                      >
-                        {loading ? 'Verificando...' : 'Verificar'}
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            )}
-          </div>
+      {/* Header */}
+      <div className="w-full py-6 px-4 border-b border-gray-700/50">
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-3xl font-bold" style={{
+            background: 'linear-gradient(135deg, #ec4899 0%, #7c3aed 50%, #3b82f6 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text'
+          }}>
+            Habbo Marketplace
+          </h1>
         </div>
       </div>
 
-      {/* Rest of Page */}
-      <div className="min-h-screen"></div>
+      {/* Main Content */}
+      <div className="flex-1 flex items-center justify-center px-4 py-12">
+        <div className="w-full max-w-md">
+          {step === 'input' ? (
+            // Step 1: Username Input
+            <div className="p-8 rounded-2xl" style={{
+              background: 'rgba(30, 30, 80, 0.4)',
+              border: '1px solid rgba(100, 100, 200, 0.2)',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <div className="flex items-center gap-3 mb-6">
+                <LogIn className="text-blue-400" size={28} />
+                <h2 className="text-2xl font-bold text-white">Autenticar</h2>
+              </div>
+
+              <form onSubmit={generateCode} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                    Nome de Utilizador Habbo
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="ex: whatwasit"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    disabled={loading}
+                    className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600 text-white placeholder:text-gray-500 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={loading || !username.trim()}
+                  className="w-full px-4 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold rounded-lg transition-all uppercase tracking-wide"
+                >
+                  {loading ? 'Processando...' : 'Gerar Código'}
+                </button>
+              </form>
+
+              <div className="mt-6 p-4 rounded-lg bg-blue-500/10 border border-blue-500/30">
+                <p className="text-sm text-gray-300">
+                  <strong className="text-blue-400">Como funciona:</strong> Insira seu nome de utilizador e clique em "Gerar Código". Você receberá um código para colocar na sua missão do Habbo.
+                </p>
+              </div>
+            </div>
+          ) : (
+            // Step 2: Code Verification
+            <div className="p-8 rounded-2xl" style={{
+              background: 'rgba(30, 30, 80, 0.4)',
+              border: '1px solid rgba(100, 100, 200, 0.2)',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <div className="flex items-center gap-3 mb-6">
+                <CheckCircle2 className="text-green-400" size={28} />
+                <h2 className="text-2xl font-bold text-white">Verificar Código</h2>
+              </div>
+
+              <div className="space-y-6">
+                {/* Generated Code Display */}
+                <div>
+                  <p className="text-sm font-medium text-gray-300 mb-2">Seu Código de Verificação:</p>
+                  <div className="flex items-center gap-3 p-4 rounded-lg bg-yellow-500/20 border border-yellow-500/50">
+                    <code className="text-3xl font-bold text-yellow-400 flex-1 tracking-widest">
+                      {generatedCode}
+                    </code>
+                    <button
+                      type="button"
+                      onClick={copyCode}
+                      className="p-2 hover:bg-yellow-500/30 rounded-lg transition-colors"
+                    >
+                      <Copy size={20} className="text-yellow-400" />
+                    </button>
+                  </div>
+                </div>
+
+                {/* Instructions */}
+                <div className="p-4 rounded-lg bg-blue-500/10 border border-blue-500/30">
+                  <p className="text-sm font-medium text-blue-300 mb-2">Próximos passos:</p>
+                  <ol className="text-sm text-gray-300 space-y-1">
+                    <li>1. Copie o código acima</li>
+                    <li>2. Abra o Habbo e vá à sua missão</li>
+                    <li>3. Cole o código na missão</li>
+                    <li>4. Volte aqui e cole o código abaixo</li>
+                  </ol>
+                </div>
+
+                {/* Verification Form */}
+                <form onSubmit={verifyCodeInMission} className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                      Código da Missão
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Cole o código que colocou na missão"
+                      value={verifyCode}
+                      onChange={(e) => setVerifyCode(e.target.value.toUpperCase())}
+                      disabled={loading}
+                      className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600 text-white placeholder:text-gray-500 rounded-lg focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition-all"
+                    />
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      id="remember"
+                      className="w-4 h-4 rounded border-gray-600 bg-gray-900/50 cursor-pointer accent-blue-500"
+                    />
+                    <label htmlFor="remember" className="text-sm text-gray-300 cursor-pointer">
+                      Manter-me conectado
+                    </label>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setStep('input');
+                        setUsername('');
+                        setVerifyCode('');
+                        setGeneratedCode('');
+                      }}
+                      className="px-4 py-3 bg-gray-700/50 hover:bg-gray-700 border border-gray-600 text-white rounded-lg transition-all font-semibold"
+                    >
+                      Voltar
+                    </button>
+                    <button
+                      type="submit"
+                      disabled={loading || !verifyCode.trim()}
+                      className="px-4 py-3 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed text-white rounded-lg transition-all font-semibold uppercase tracking-wide"
+                    >
+                      {loading ? 'Verificando...' : 'Verificar'}
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
