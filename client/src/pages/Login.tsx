@@ -119,16 +119,17 @@ export default function Login() {
           <p className="text-gray-400">Autentique-se com sua conta Habbo</p>
         </div>
 
-        {/* Login Container */}
-        <div className="max-w-md">
-          {step === 'username' ? (
-            <>
-              {/* Step 1: Username */}
-              <div className="p-6 rounded-lg mb-6" style={glassStyle}>
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Left Column - Login Form */}
+          <div className="md:col-span-1">
+            {step === 'username' ? (
+              <div className="p-6 rounded-lg" style={glassStyle}>
+                <h2 className="text-2xl font-bold text-white mb-6">🔐 Login</h2>
                 <form onSubmit={generateCode} className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-white mb-3">
-                      Nome de Utilizador Habbo
+                    <label className="block text-sm font-medium text-white mb-2">
+                      Nome de Utilizador
                     </label>
                     <input
                       type="text"
@@ -145,72 +146,35 @@ export default function Login() {
                     style={{ background: gradientBg }}
                     className="w-full text-white font-semibold py-2 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {loading ? 'Gerando código...' : 'Gerar Código de Verificação'}
+                    {loading ? 'Gerando...' : 'Gerar Código'}
                   </button>
                 </form>
               </div>
-
-              {/* Info Box */}
+            ) : (
               <div className="p-6 rounded-lg" style={glassStyle}>
-                <h3 className="font-semibold text-white mb-4">Como funciona?</h3>
-                <ol className="text-sm text-gray-300 space-y-2">
-                  <li><strong>1.</strong> Insira seu nome de utilizador do Habbo</li>
-                  <li><strong>2.</strong> Clique em "Gerar Código"</li>
-                  <li><strong>3.</strong> Copie o código gerado</li>
-                  <li><strong>4.</strong> Cole o código na sua missão no Habbo</li>
-                  <li><strong>5.</strong> Volte aqui e clique em "Verificar"</li>
-                </ol>
-              </div>
-            </>
-          ) : (
-            <>
-              {/* Step 2: Verify Code */}
-              <div className="p-6 rounded-lg mb-6" style={glassStyle}>
+                <h2 className="text-2xl font-bold text-white mb-6">✅ Verificar</h2>
                 <form onSubmit={verifyCodeInMission} className="space-y-4">
                   <div>
-                    <p className="text-sm text-gray-300 mb-3">Seu código de verificação:</p>
-                    
-                    {/* Code Display */}
-                    <div className="flex items-center gap-2 p-4 rounded-lg mb-6" style={{
-                      background: 'rgba(100, 100, 200, 0.2)',
-                      border: '2px solid rgba(236, 72, 153, 0.5)'
-                    }}>
-                      <code className="text-3xl font-bold flex-1 tracking-widest" style={gradientText}>
-                        {generatedCode}
-                      </code>
-                      <button
-                        type="button"
-                        onClick={copyCode}
-                        className="text-gray-400 hover:text-white px-3 py-2"
-                      >
-                        {copied ? '✓' : '📋'}
-                      </button>
-                    </div>
-
-                    {/* Verify Input */}
-                    <label className="block text-sm font-medium text-white mb-3">
+                    <label className="block text-sm font-medium text-white mb-2">
                       Código da Missão
                     </label>
                     <input
                       type="text"
-                      placeholder="Cole o código que colocou na missão"
+                      placeholder="Cole o código"
                       value={verifyCode}
                       onChange={(e) => setVerifyCode(e.target.value.toUpperCase())}
                       disabled={loading}
-                      className="w-full mb-4 px-4 py-2 bg-transparent border border-gray-600 text-white placeholder:text-gray-500 rounded-lg focus:outline-none focus:border-pink-500"
+                      className="w-full px-4 py-2 bg-transparent border border-gray-600 text-white placeholder:text-gray-500 rounded-lg focus:outline-none focus:border-pink-500"
                     />
                   </div>
-
-                  {/* Buttons */}
                   <button
                     type="submit"
                     disabled={loading || !verifyCode.trim()}
                     style={{ background: gradientBg }}
-                    className="w-full text-white font-semibold py-2 rounded-lg mb-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full text-white font-semibold py-2 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {loading ? 'Verificando...' : 'Verificar Código'}
+                    {loading ? 'Verificando...' : 'Verificar'}
                   </button>
-
                   <button
                     type="button"
                     onClick={() => {
@@ -225,27 +189,66 @@ export default function Login() {
                   </button>
                 </form>
               </div>
+            )}
+          </div>
 
-              {/* Instructions */}
+          {/* Middle Column - Code Display */}
+          {step === 'verify' && (
+            <div className="md:col-span-1">
               <div className="p-6 rounded-lg" style={glassStyle}>
-                <h3 className="font-semibold text-white mb-3">Próximos passos</h3>
-                <ul className="text-sm text-gray-300 space-y-1">
-                  <li>✓ Copie o código acima</li>
-                  <li>✓ Abra o Habbo e acesse sua missão</li>
-                  <li>✓ Cole o código na missão</li>
-                  <li>✓ Volte aqui e cole o código no campo acima</li>
-                  <li>✓ Clique em "Verificar Código"</li>
-                </ul>
+                <h2 className="text-2xl font-bold text-white mb-6">📋 Seu Código</h2>
+                <div className="flex items-center justify-center p-6 rounded-lg mb-4" style={{
+                  background: 'rgba(100, 100, 200, 0.2)',
+                  border: '2px solid rgba(236, 72, 153, 0.5)'
+                }}>
+                  <code className="text-4xl font-bold tracking-widest" style={gradientText}>
+                    {generatedCode}
+                  </code>
+                </div>
+                <button
+                  type="button"
+                  onClick={copyCode}
+                  className="w-full px-4 py-2 rounded-lg transition-all"
+                  style={{
+                    background: copied ? 'rgba(34, 197, 94, 0.3)' : 'rgba(100, 100, 200, 0.2)',
+                    border: '1px solid rgba(100, 100, 200, 0.3)',
+                    color: copied ? '#22c55e' : '#9ca3af'
+                  }}
+                >
+                  {copied ? '✓ Copiado!' : '📋 Copiar Código'}
+                </button>
               </div>
-            </>
+            </div>
           )}
 
-          {/* Footer */}
-          <p className="text-xs text-gray-500 text-center mt-6">
-            Esta aplicação usa a API pública do Habbo.com.br<br/>
-            Seus dados são armazenados apenas localmente no seu navegador
-          </p>
+          {/* Right Column - Instructions */}
+          <div className="md:col-span-1">
+            <div className="p-6 rounded-lg" style={glassStyle}>
+              <h2 className="text-2xl font-bold text-white mb-6">📖 Como Funciona?</h2>
+              <div className="space-y-3">
+                {[
+                  { num: 1, text: 'Insira seu nome de utilizador' },
+                  { num: 2, text: 'Clique em "Gerar Código"' },
+                  { num: 3, text: 'Copie o código gerado' },
+                  { num: 4, text: 'Cole na sua missão no Habbo' },
+                  { num: 5, text: 'Volte e verifique o código' }
+                ].map((step) => (
+                  <div key={step.num} className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: gradientBg }}>
+                      <span className="text-white font-bold text-sm">{step.num}</span>
+                    </div>
+                    <p className="text-gray-300 text-sm pt-1">{step.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
+
+        {/* Footer */}
+        <p className="text-xs text-gray-500 text-center mt-8">
+          Esta aplicação usa a API pública do Habbo.com.br • Dados armazenados apenas localmente
+        </p>
       </div>
     </div>
   );
