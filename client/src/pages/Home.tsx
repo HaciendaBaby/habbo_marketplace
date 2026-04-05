@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'wouter';
 import { toast } from 'sonner';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
@@ -18,8 +17,6 @@ const gradientText = {
 };
 
 export default function Home() {
-  const [, setLocation] = useLocation();
-  const [user, setUser] = useState<any>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(false);
   const [itemData, setItemData] = useState<any>(null);
@@ -28,14 +25,8 @@ export default function Home() {
   const [featuredItems, setFeaturedItems] = useState<any[]>([]);
 
   useEffect(() => {
-    const userData = localStorage.getItem('habboUser');
-    if (!userData) {
-      setLocation('/login');
-    } else {
-      setUser(JSON.parse(userData));
-      loadSearchHistory();
-    }
-  }, [setLocation]);
+    loadSearchHistory();
+  }, []);
 
   const loadSearchHistory = () => {
     const history = localStorage.getItem('searchHistory');
@@ -114,13 +105,7 @@ export default function Home() {
     }
   };
 
-  const logout = () => {
-    localStorage.removeItem('habboUser');
-    setLocation('/login');
-    toast.success('Desconectado com sucesso');
-  };
 
-  if (!user) return null;
 
   return (
     <div className="min-h-screen p-4" style={{
@@ -128,16 +113,11 @@ export default function Home() {
     }}>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex justify-between items-center mb-12">
-          <div>
-            <h1 className="text-5xl font-bold mb-2" style={gradientText}>
-              Habbo Marketplace
-            </h1>
-            <p className="text-gray-400">Bem-vindo, <span className="font-semibold text-white">{user.username}</span>!</p>
-          </div>
-          <button onClick={logout} className="text-white border border-gray-600 hover:bg-red-900/20 px-4 py-2 rounded-lg">
-            🚪 Sair
-          </button>
+        <div className="mb-12">
+          <h1 className="text-5xl font-bold mb-2" style={gradientText}>
+            Habbo Marketplace
+          </h1>
+          <p className="text-gray-400">Pesquise e analise itens do Habbo</p>
         </div>
 
         {/* Search Bar */}
