@@ -147,3 +147,8 @@
 [2026-04-05T13:25:30.194Z] 9:25:30 AM [vite] changed tsconfig file detected: /home/ubuntu/habbo_marketplace/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
 [2026-04-05T13:25:30.195Z] 9:25:30 AM [vite] vite.config.ts changed, restarting server...
 [2026-04-05T13:25:30.215Z] 9:25:30 AM [vite] server restarted.
+[2026-04-05T13:27:50.218Z] 9:27:50 AM [vite] (client) page reload index.html
+[2026-04-05T13:27:50.219Z] 9:27:50 AM [vite] (client) hmr update /src/App.tsx
+[2026-04-05T13:27:50.220Z] 9:27:50 AM [vite] (client) hmr update /src/index.css
+[2026-04-05T13:27:50.220Z] 9:27:50 AM [vite] (client) page reload src/main.tsx
+[2026-04-05T13:27:50.220Z] 9:27:50 AM [vite] (client) hmr update /src/pages/Home.tsx
