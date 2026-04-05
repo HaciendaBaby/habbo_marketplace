@@ -1,11 +1,19 @@
 @import "tailwindcss";
 
 @layer base {
+  :root {
+    --background: 15 12 41;
+    --foreground: 255 255 255;
+    --border: 100 100 200;
+  }
+
   * {
     @apply border-border;
   }
+  
   body {
-    @apply bg-background text-foreground;
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    color: rgb(var(--foreground));
   }
 }
 
