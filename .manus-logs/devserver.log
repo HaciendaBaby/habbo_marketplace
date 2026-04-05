@@ -1,0 +1,149 @@
+[2026-04-05T01:21:19.697Z] Dev server process group stopped
+[2026-04-05T01:21:19.700Z] ELIFECYCLE  Command failed.
+[2026-04-05T01:21:19.701Z] WARN   Local package.json exists, but node_modules missing, did you mean to install?
+[2026-04-05T01:21:19.723Z] Dev server exited with code -15
+[2026-04-05T01:23:13.578Z] Starting dev server with command: pnpm run dev
+[2026-04-05T01:23:13.971Z] ERR_PNPM_NO_IMPORTER_MANIFEST_FOUND  No package.json (or package.yaml, or package.json5) was found in "/home/ubuntu/habbo_marketplace".
+[2026-04-05T01:23:13.994Z] Dev server exited with code 1
+[2026-04-05T01:26:02.060Z] Starting dev server with command: pnpm run dev
+[2026-04-05T01:26:03.079Z] 
+[2026-04-05T01:26:03.080Z] > habbo_marketplace@1.0.0 dev /home/ubuntu/habbo_marketplace
+[2026-04-05T01:26:03.080Z] > vite --host
+[2026-04-05T01:26:03.081Z] 
+[2026-04-05T01:26:03.380Z] 
+[2026-04-05T01:26:03.381Z] VITE v7.3.1  ready in 259 ms
+[2026-04-05T01:26:03.382Z] 
+[2026-04-05T01:26:03.382Z] ➜  Local:   http://localhost:5173/
+[2026-04-05T01:26:03.383Z] ➜  Network: http://169.254.0.21:5173/
+[2026-04-05T13:14:50.746Z] Dev server process group stopped
+[2026-04-05T13:14:50.980Z] ELIFECYCLE  Command failed.
+[2026-04-05T13:14:51.013Z] Dev server exited with code -15
+[2026-04-05T13:14:53.758Z] Starting dev server with command: pnpm run dev
+[2026-04-05T13:14:54.558Z] 
+[2026-04-05T13:14:54.559Z] > habbo_marketplace@1.0.0 dev /home/ubuntu/habbo_marketplace
+[2026-04-05T13:14:54.559Z] > vite --host
+[2026-04-05T13:14:54.560Z] 
+[2026-04-05T13:14:55.080Z] 
+[2026-04-05T13:14:55.080Z] VITE v7.3.1  ready in 478 ms
+[2026-04-05T13:14:55.081Z] 
+[2026-04-05T13:14:55.081Z] ➜  Local:   http://localhost:5173/
+[2026-04-05T13:14:55.082Z] ➜  Network: http://169.254.0.21:5173/
+[2026-04-05T13:15:38.953Z] 9:15:38 AM [vite] vite.config.ts changed, restarting server...
+[2026-04-05T13:15:38.979Z] 9:15:38 AM [vite] server restarted.
+[2026-04-05T13:15:42.604Z] Dev server process group stopped
+[2026-04-05T13:15:42.608Z] ELIFECYCLE  Command failed.
+[2026-04-05T13:15:42.633Z] Dev server exited with code -15
+[2026-04-05T13:15:45.618Z] Starting dev server with command: pnpm run dev
+[2026-04-05T13:15:46.362Z] 
+[2026-04-05T13:15:46.362Z] > habbo_marketplace@1.0.0 dev /home/ubuntu/habbo_marketplace
+[2026-04-05T13:15:46.363Z] > vite --host
+[2026-04-05T13:15:46.363Z] 
+[2026-04-05T13:15:46.582Z] 
+[2026-04-05T13:15:46.583Z] VITE v7.3.1  ready in 182 ms
+[2026-04-05T13:15:46.584Z] 
+[2026-04-05T13:15:46.584Z] ➜  Local:   http://localhost:5173/
+[2026-04-05T13:15:46.585Z] ➜  Network: http://169.254.0.21:5173/
+[2026-04-05T13:16:43.264Z] 9:16:43 AM [vite] vite.config.ts changed, restarting server...
+[2026-04-05T13:16:43.289Z] 9:16:43 AM [vite] (client) Re-optimizing dependencies because vite config has changed
+[2026-04-05T13:16:43.308Z] 9:16:43 AM [vite] server restarted.
+[2026-04-05T13:16:49.096Z] Dev server process group stopped
+[2026-04-05T13:16:49.099Z] ELIFECYCLE  Command failed.
+[2026-04-05T13:16:49.122Z] Dev server exited with code -15
+[2026-04-05T13:16:52.109Z] Starting dev server with command: pnpm run dev
+[2026-04-05T13:16:52.920Z] 
+[2026-04-05T13:16:52.921Z] > habbo_marketplace@1.0.0 dev /home/ubuntu/habbo_marketplace
+[2026-04-05T13:16:52.921Z] > vite --host
+[2026-04-05T13:16:52.921Z] 
+[2026-04-05T13:16:53.159Z] 
+[2026-04-05T13:16:53.160Z] VITE v7.3.1  ready in 198 ms
+[2026-04-05T13:16:53.160Z] 
+[2026-04-05T13:16:53.161Z] ➜  Local:   http://localhost:5173/
+[2026-04-05T13:16:53.162Z] ➜  Network: http://169.254.0.21:5173/
+[2026-04-05T13:16:54.704Z] 9:16:54 AM [vite] (client) Pre-transform error: Failed to resolve import "@/components/ui/sonner" from "client/src/App.tsx". Does the file exist?
+[2026-04-05T13:16:54.705Z] Plugin: vite:import-analysis
+[2026-04-05T13:16:54.706Z] File: /home/ubuntu/habbo_marketplace/client/src/App.tsx:1:24
+[2026-04-05T13:16:54.706Z] 1  |  import { jsxDEV } from "react/jsx-dev-runtime";
+[2026-04-05T13:16:54.707Z] 2  |  import { Toaster } from "@/components/ui/sonner";
+[2026-04-05T13:16:54.707Z] |                           ^
+[2026-04-05T13:16:54.707Z] 3  |  import { TooltipProvider } from "@/components/ui/tooltip";
+[2026-04-05T13:16:54.707Z] 4  |  import { Route, Switch } from "wouter";
+[2026-04-05T13:16:54.905Z] 9:16:54 AM [vite] Internal server error: Failed to resolve import "@/components/ui/sonner" from "client/src/App.tsx". Does the file exist?
+[2026-04-05T13:16:54.906Z] Plugin: vite:import-analysis
+[2026-04-05T13:16:54.906Z] File: /home/ubuntu/habbo_marketplace/client/src/App.tsx:1:24
+[2026-04-05T13:16:54.907Z] 1  |  import { jsxDEV } from "react/jsx-dev-runtime";
+[2026-04-05T13:16:54.907Z] 2  |  import { Toaster } from "@/components/ui/sonner";
+[2026-04-05T13:16:54.907Z] |                           ^
+[2026-04-05T13:16:54.908Z] 3  |  import { TooltipProvider } from "@/components/ui/tooltip";
+[2026-04-05T13:16:54.908Z] 4  |  import { Route, Switch } from "wouter";
+[2026-04-05T13:16:54.908Z] at TransformPluginContext._formatLog (file:///home/ubuntu/habbo_marketplace/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.2_jiti@2.6.1_lightningcss@1.32.0_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28999:43)
+[2026-04-05T13:16:54.909Z] at TransformPluginContext.error (file:///home/ubuntu/habbo_marketplace/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.2_jiti@2.6.1_lightningcss@1.32.0_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28996:14)
+[2026-04-05T13:16:54.909Z] at normalizeUrl (file:///home/ubuntu/habbo_marketplace/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.2_jiti@2.6.1_lightningcss@1.32.0_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:27119:18)
+[2026-04-05T13:16:54.909Z] at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-04-05T13:16:54.910Z] at async file:///home/ubuntu/habbo_marketplace/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.2_jiti@2.6.1_lightningcss@1.32.0_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:27177:32
+[2026-04-05T13:16:54.910Z] at async Promise.all (index 1)
+[2026-04-05T13:16:54.910Z] at async TransformPluginContext.transform (file:///home/ubuntu/habbo_marketplace/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.2_jiti@2.6.1_lightningcss@1.32.0_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:27145:4)
+[2026-04-05T13:16:54.912Z] at async EnvironmentPluginContainer.transform (file:///home/ubuntu/habbo_marketplace/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.2_jiti@2.6.1_lightningcss@1.32.0_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28797:14)
+[2026-04-05T13:16:54.912Z] at async loadAndTransform (file:///home/ubuntu/habbo_marketplace/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.2_jiti@2.6.1_lightningcss@1.32.0_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:22670:26)
+[2026-04-05T13:16:54.913Z] at async viteTransformMiddleware (file:///home/ubuntu/habbo_marketplace/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.2_jiti@2.6.1_lightningcss@1.32.0_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:24542:20)
+[2026-04-05T13:16:54.922Z] 9:16:54 AM [vite] (client) Pre-transform error: Failed to resolve import "@/components/ui/button" from "client/src/pages/Home.tsx". Does the file exist?
+[2026-04-05T13:16:54.923Z] Plugin: vite:import-analysis
+[2026-04-05T13:16:54.923Z] File: /home/ubuntu/habbo_marketplace/client/src/pages/Home.tsx:3:23
+[2026-04-05T13:16:54.924Z] 3  |  import { useState, useEffect } from "react";
+[2026-04-05T13:16:54.924Z] 4  |  import { useLocation } from "wouter";
+[2026-04-05T13:16:54.924Z] 5  |  import { Button } from "@/components/ui/button";
+[2026-04-05T13:16:54.924Z] |                          ^
+[2026-04-05T13:16:54.925Z] 6  |  import { Input } from "@/components/ui/input";
+[2026-04-05T13:16:54.925Z] 7  |  import { Search, TrendingUp, ShoppingCart, LogOut, Flame, Clock } from "lucide-react";
+[2026-04-05T13:16:54.925Z] 9:16:54 AM [vite] (client) Pre-transform error: Failed to resolve import "@/components/ui/button" from "client/src/pages/Home.tsx". Does the file exist?
+[2026-04-05T13:16:54.926Z] Plugin: vite:import-analysis
+[2026-04-05T13:16:54.926Z] File: /home/ubuntu/habbo_marketplace/client/src/pages/Home.tsx:3:23
+[2026-04-05T13:16:54.927Z] 3  |  import { useState, useEffect } from "react";
+[2026-04-05T13:16:54.927Z] 4  |  import { useLocation } from "wouter";
+[2026-04-05T13:16:54.927Z] 5  |  import { Button } from "@/components/ui/button";
+[2026-04-05T13:16:54.928Z] |                          ^
+[2026-04-05T13:16:54.928Z] 6  |  import { Input } from "@/components/ui/input";
+[2026-04-05T13:16:54.929Z] 7  |  import { Search, TrendingUp, ShoppingCart, LogOut, Flame, Clock } from "lucide-react";
+[2026-04-05T13:16:54.929Z] 9:16:54 AM [vite] (client) Pre-transform error: Failed to resolve import "@/components/ui/button" from "client/src/pages/Login.tsx". Does the file exist?
+[2026-04-05T13:16:54.930Z] Plugin: vite:import-analysis
+[2026-04-05T13:16:54.930Z] File: /home/ubuntu/habbo_marketplace/client/src/pages/Login.tsx:3:23
+[2026-04-05T13:16:54.931Z] 3  |  import { useState } from "react";
+[2026-04-05T13:16:54.931Z] 4  |  import { useLocation } from "wouter";
+[2026-04-05T13:16:54.932Z] 5  |  import { Button } from "@/components/ui/button";
+[2026-04-05T13:16:54.932Z] |                          ^
+[2026-04-05T13:16:54.933Z] 6  |  import { Input } from "@/components/ui/input";
+[2026-04-05T13:16:54.934Z] 7  |  import { LogIn, Loader2, Copy, Check, AlertCircle } from "lucide-react";
+[2026-04-05T13:16:54.934Z] 9:16:54 AM [vite] (client) Pre-transform error: Failed to resolve import "@/components/ui/button" from "client/src/pages/Login.tsx". Does the file exist?
+[2026-04-05T13:16:54.935Z] Plugin: vite:import-analysis
+[2026-04-05T13:16:54.935Z] File: /home/ubuntu/habbo_marketplace/client/src/pages/Login.tsx:3:23
+[2026-04-05T13:16:54.936Z] 3  |  import { useState } from "react";
+[2026-04-05T13:16:54.937Z] 4  |  import { useLocation } from "wouter";
+[2026-04-05T13:16:54.937Z] 5  |  import { Button } from "@/components/ui/button";
+[2026-04-05T13:16:54.938Z] |                          ^
+[2026-04-05T13:16:54.938Z] 6  |  import { Input } from "@/components/ui/input";
+[2026-04-05T13:16:54.938Z] 7  |  import { LogIn, Loader2, Copy, Check, AlertCircle } from "lucide-react";
+[2026-04-05T13:17:08.666Z] 9:17:08 AM [vite] (client) page reload src/App.tsx
+[2026-04-05T13:17:27.167Z] 9:17:27 AM [vite] (client) page reload src/pages/Login.tsx
+[2026-04-05T13:17:49.208Z] 9:17:49 AM [vite] (client) page reload src/pages/Home.tsx
+[2026-04-05T13:17:55.804Z] Dev server process group stopped
+[2026-04-05T13:17:55.806Z] ELIFECYCLE  Command failed.
+[2026-04-05T13:17:55.826Z] Dev server exited with code -15
+[2026-04-05T13:17:58.816Z] Starting dev server with command: pnpm run dev
+[2026-04-05T13:17:59.565Z] 
+[2026-04-05T13:17:59.565Z] > habbo_marketplace@1.0.0 dev /home/ubuntu/habbo_marketplace
+[2026-04-05T13:17:59.566Z] > vite --host
+[2026-04-05T13:17:59.566Z] 
+[2026-04-05T13:17:59.819Z] 
+[2026-04-05T13:17:59.820Z] VITE v7.3.1  ready in 214 ms
+[2026-04-05T13:17:59.821Z] 
+[2026-04-05T13:17:59.821Z] ➜  Local:   http://localhost:5173/
+[2026-04-05T13:17:59.822Z] ➜  Network: http://169.254.0.21:5173/
+[2026-04-05T13:22:24.936Z] 9:22:24 AM [vite] (client) hmr update /src/pages/Home.tsx
+[2026-04-05T13:25:21.649Z] 9:25:21 AM [vite] (client) page reload index.html
+[2026-04-05T13:25:21.650Z] 9:25:21 AM [vite] (client) hmr update /src/App.tsx
+[2026-04-05T13:25:21.650Z] 9:25:21 AM [vite] (client) hmr update /src/index.css
+[2026-04-05T13:25:21.651Z] 9:25:21 AM [vite] (client) page reload src/main.tsx
+[2026-04-05T13:25:21.651Z] 9:25:21 AM [vite] (client) hmr update /src/pages/Home.tsx
+[2026-04-05T13:25:21.653Z] 9:25:21 AM [vite] (client) hmr update /src/pages/Login.tsx
+[2026-04-05T13:25:30.194Z] 9:25:30 AM [vite] changed tsconfig file detected: /home/ubuntu/habbo_marketplace/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2026-04-05T13:25:30.195Z] 9:25:30 AM [vite] vite.config.ts changed, restarting server...
+[2026-04-05T13:25:30.215Z] 9:25:30 AM [vite] server restarted.
