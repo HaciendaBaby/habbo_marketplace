@@ -170,3 +170,4 @@
 [2026-04-05T13:43:17.340Z] 9:43:17 AM [vite] (client) ✨ optimized dependencies changed. reloading
 [2026-04-05T13:43:25.015Z] 9:43:25 AM [vite] (client) hmr update /src/pages/Home.tsx
 [2026-04-05T13:43:37.078Z] 9:43:37 AM [vite] (client) hmr update /src/pages/Home.tsx
+[2026-04-05T13:45:13.563Z] 9:45:13 AM [vite] (client) hmr update /src/pages/Login.tsx
