@@ -152,3 +152,16 @@
 [2026-04-05T13:27:50.220Z] 9:27:50 AM [vite] (client) hmr update /src/index.css
 [2026-04-05T13:27:50.220Z] 9:27:50 AM [vite] (client) page reload src/main.tsx
 [2026-04-05T13:27:50.220Z] 9:27:50 AM [vite] (client) hmr update /src/pages/Home.tsx
+[2026-04-05T13:40:45.000Z] Starting dev server with command: pnpm run dev
+[2026-04-05T13:40:45.742Z] 
+[2026-04-05T13:40:45.743Z] > habbo_marketplace@1.0.0 dev /home/ubuntu/habbo_marketplace
+[2026-04-05T13:40:45.743Z] > vite --host
+[2026-04-05T13:40:45.744Z] 
+[2026-04-05T13:40:46.108Z] 
+[2026-04-05T13:40:46.109Z] VITE v7.3.1  ready in 314 ms
+[2026-04-05T13:40:46.109Z] 
+[2026-04-05T13:40:46.109Z] ➜  Local:   http://localhost:5173/
+[2026-04-05T13:40:46.110Z] ➜  Network: http://169.254.0.21:5173/
+[2026-04-05T13:41:16.180Z] 9:41:16 AM [vite] vite.config.ts changed, restarting server...
+[2026-04-05T13:41:16.200Z] 9:41:16 AM [vite] server restarted.
+[2026-04-05T13:41:23.614Z] 9:41:23 AM [vite] (client) page reload dist/index.html
